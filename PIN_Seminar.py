@@ -26,16 +26,12 @@ def generategraph(yacm,yusenix,yieee,yndss,word):
     
     tick_spacing = 1
     plt.xticks(np.arange(min(lx), max(lx)+1, 1.0))
-    #plt.yticks(np.arange(0, 20, 5))
     plt.grid()
 
     plt.title('Use of the given words throughout the years.')
 
     plt.legend()
     st.pyplot()
-    #plt.savefig(word + '.png')
-    #plt.show()
-    #plt.clf()
 
 def getvalues(inputstring):
     listofkeywords = []
@@ -51,14 +47,14 @@ def getvalues(inputstring):
     for conference in conferences:
         for x in range(2010,2020):
             templist = []
-            if(not os.path.isfile("./" + conference + "-" + str(x) + ".csv")):
+            if(not os.path.isfile("Dataset/" + conference + "-" + str(x) + ".csv")):
                 continue
-            size = sum(1 for row in csv.DictReader(open(conference + "-" + str(x) + ".csv")))
+            size = sum(1 for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")))
             if(conference == "ieee"):
                 confname = conference.upper() + " - " + str(x)
                 momcount = 0
                 for a in listofkeywords:
-                    for row in csv.DictReader(open(conference + "-" + str(x) + ".csv")):
+                    for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['keywords'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])
@@ -71,7 +67,7 @@ def getvalues(inputstring):
                 confname = conference.upper() + " - " + str(x)
                 momcount = 0
                 for a in listofkeywords:
-                    for row in csv.DictReader(open(conference + "-" + str(x) + ".csv")):
+                    for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['abstract'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])
@@ -85,10 +81,6 @@ def getvalues(inputstring):
                 yusenix.append(frequency)
             if(conference == "ndss"):
                 yndss.append(frequency)
-            #if count != "":
-            #    count = count + " " + str(frequency)
-            #else:
-            #    count = count + str(frequency)
     generategraph(yacm,yusenix,yieee,yndss,a)
     yacm = []
     yusenix = []
@@ -100,5 +92,3 @@ path = st.text_input('Enter keyword')
 if path:
 	df = getvalues(path)
 	st.table(df)
-	#df = pd.read_csv(path)
-	#df
