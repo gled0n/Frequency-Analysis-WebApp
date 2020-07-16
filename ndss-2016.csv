@@ -1,0 +1,1645 @@
+conference,title,abstract
+symp2016,"Transcript Collision Attacks: Breaking Authentication in TLS, IKE and SSH","In response to high-profile attacks that ex-
+ploit hash function collisions, software vendors have
+started to phase out the use of MD5 and SHA-1 in
+third-party digital signature applications such as X.509
+certificates. However, weak hash constructions continue
+to be used in various cryptographic constructions within
+mainstream protocols such as TLS, IKE, and SSH, because
+practitioners argue that their use in these protocols relies
+only on second preimage resistance, and hence is unaf-
+fected by collisions. This paper systematically investigates
+and debunks this argument.
+
+We identify a new class of transcript collision attacks
+on key exchange protocols that rely on efficient collision-
+finding algorithms on the underlying hash construc-
+tions. We implement and demonstrate concrete credential-
+forwarding attacks on TLS 1.2 client authentication, TLS
+1.3 server authentication, and TLS channel bindings. We
+describe almost-practical impersonation and downgrade
+attacks in TLS 1.1, IKEv2 and SSH-2. As far as we know,
+these are the first collision-based attacks on the crypto-
+graphic constructions used in these popular protocols.
+
+Our practical attacks on TLS were responsibly dis-
+closed (under the name SLOTH) and have resulted in
+security updates to several TLS libraries. Our analysis
+demonstrates the urgent need for disabling all uses of
+weak hash functions in mainstream protocols, and our
+recommendations have been incorporated in the upcoming
+Token Binding and TLS 1.3 protocols."
+symp2016,TLS in the Wild:  An Internet-wide Analysis of TLS-based Protocols for Electronic Communication,"Email and chat still constitute the majority of
+electronic communication on the Internet. The standardisation
+and acceptance of protocols such as SMTP, IMAP, POP3, XMPP,
+and IRC has allowed to deploy servers for email and chat in a
+decentralised and interoperable fashion. These protocols can be
+secured by providing encryption with TLS—directly or via the
+STARTTLS extension. X.509 PKIs and ad hoc methods can be
+leveraged to authenticate communication peers. However, secure
+configuration is not straight-forward and many combinations
+of encryption and authentication mechanisms lead to insecure
+deployments and potentially compromise of data in transit. In
+this paper, we present the largest study to date that investigates
+the security of our email and chat infrastructures. We used active
+Internet-wide scans to determine the amount of secure service
+deployments, and employed passive monitoring to investigate to
+which degree user agents actually choose secure mechanisms
+for their communication. We addressed both client-to-server
+interactions as well as server-to-server forwarding. Apart from the
+authentication and encryption mechanisms that the investigated
+protocols offer on the transport layer, we also investigated the
+methods for client authentication in use on the application layer.
+Our findings shed light on an insofar unexplored area of the
+Internet. Our results, in a nutshell, are a mix of both positive
+and negative findings. While large providers offer good security
+for their users, most of our communication is poorly secured in
+transit, with weaknesses in the cryptographic setup and especially
+in the choice of authentication mechanisms. We present a list of
+actionable changes to improve the situation."
+symp2016,Killed by Proxy:  Analyzing Client-end TLS Interception Software,"To filter SSL/TLS-protected traffic, some antivirus
+and parental-control applications interpose a TLS proxy in the
+middle of the host’s communications. We set out to analyze such
+proxies as there are known problems in other (more matured)
+TLS processing engines, such as browsers and common TLS
+libraries. Compared to regular proxies, client-end TLS proxies
+impose several unique constraints, and must be analyzed for
+additional attack vectors; e.g., proxies may trust their own root
+certificates for externally-delivered content and rely on a custom
+trusted CA store (bypassing OS/browser stores). Covering existing
+and new attack vectors, we design an integrated framework to
+analyze such client-end TLS proxies. Using the framework, we
+perform a thorough analysis of eight antivirus and four parental-
+control applications for Windows that act as TLS proxies, along
+with two additional products that only import a root certificate.
+Our systematic analysis uncovered that several of these tools
+severely affect TLS security on their host machines. In particular,
+we found that four products are vulnerable to full server
+impersonation under an active man-in-the-middle (MITM) attack
+out-of-the-box, and two more if TLS filtering is enabled. Several
+of these tools also mislead browsers into believing that a TLS
+connection is more secure than it actually is, by e.g., artificially
+upgrading a server’s TLS version at the client. Our work is
+intended to highlight new risks introduced by TLS interception
+tools, which are possibly used by millions of users."
+symp2016,SIBRA:  Scalable Internet Bandwidth Reservation Architecture,"This paper proposes a Scalable Internet Bandwidth
+Reservation Architecture (SIBRA) as a new approach against
+DDoS attacks, which, until now, continue to be a menace on
+today’s Internet. SIBRA provides scalable inter-domain resource
+allocations and botnet-size independence, an important property to
+realize why previous defense approaches are insufficient. Botnet-
+size independence enables two end hosts to set up communication
+regardless of the size of distributed botnets in any Autonomous
+System in the Internet. SIBRA thus ends the arms race between
+DDoS attackers and defenders. Furthermore, SIBRA is based on
+purely stateless operations for reservation renewal, flow monitor-
+ing, and policing, resulting in highly efficient router operation,
+which is demonstrated with a full implementation. Finally, SIBRA
+supports Dynamic Interdomain Leased Lines (DILLs), offering
+new business opportunities for ISPs."
+symp2016,Don’t Forget to Lock the Back Door!  A Characterization of IPv6 Network Security Policy,"There is growing operational awareness of the
+challenges in securely operating IPv6 networks. Through a
+measurement study of 520,000 dual-stack servers and 25,000
+dual-stack routers, we examine the extent to which security
+policy codified in IPv4 has also been deployed in IPv6. We
+find several high-value target applications with a comparatively
+open security policy in IPv6 including: (i) SSH, Telnet, SNMP,
+are more than twice as open on routers in IPv6 as they are
+in IPv4; (ii) nearly half of routers with BGP open were only
+open in IPv6; and (iii) in the server dataset, SNMP was twice
+as open in IPv6 as in IPv4. We conduct a detailed study
+of where port blocking policy is being applied and find that
+protocol openness discrepancies are consistent within network
+boundaries, suggesting a systemic failure in organizations to
+deploy consistent security policy. We successfully communicate
+our findings with twelve network operators and all twelve confirm
+that the relative openness was unintentional. Ten of the twelve
+immediately moved to deploy a congruent IPv6 security policy,
+reflecting real operational concern. Finally, we revisit the belief
+that the security impact of this comparative openness in IPv6 is
+mitigated by the infeasibility of IPv6 network-wide scanning—we
+find that, for both of our datasets, host addressing practices make
+discovering these high-value hosts feasible by scanning alone.
+To help operators accurately measure their own IPv6 security
+posture, we make our probing system publicly available."
+symp2016,Attacking the Network Time Protocol,"We explore the risk that network attackers can
+exploit unauthenticated Network Time Protocol (NTP) traffic to
+alter the time on client systems. We first discuss how an on-
+path attacker, that hijacks traffic to an NTP server, can quickly
+shift time on the server’s clients. Then, we present an extremely
+low-rate (single packet) denial-of-service attack that an off-path
+attacker, located anywhere on the network, can use to disable
+NTP clock synchronization on a client. Next, we show how
+an off-path attacker can exploit IPv4 packet fragmentation to
+dramatically shift time on a client. We discuss the implications
+of these attacks on other core Internet protocols, quantify their
+attack surface using Internet measurements, and suggest a few
+simple countermeasures that can improve the security of NTP."
+symp2016,SPIFFY:  Inducing Cost-Detectability Tradeoffs for Persistent Link-Flooding Attacks,"We have recently witnessed the real life demonstra-
+tion of link-flooding attacks—DDoS attacks that target the core of
+the Internet that can cause significant damage while remaining
+undetected. Because these attacks use traffic patterns that are
+indistinguishable from legitimate TCP-like flows, they can be
+persistent and cause long-term traffic disruption. Existing DDoS
+defenses that rely on detecting flow deviations from normal TCP
+traffic patterns cannot work in this case. Given the low cost of
+launching such attacks and their indistinguishability, we argue
+that any countermeasure must fundamentally tackle the root
+cause of the problem: either force attackers to increase their costs,
+or barring that, force attack traffic to become distinguishable
+from legitimate traffic. Our key insight is that to tackle this root
+cause it is sufficient to perform a rate change test, where we
+temporarily increase the effective bandwidth of the bottlenecked
+core link and observe the response. Attacks by cost-sensitive
+adversaries who try to fully utilize the bots’ upstream bandwidth
+will be detected since they will be unable to demonstrably
+increase throughput after bandwidth expansion. Alternatively,
+adversaries are forced to increase costs by having to mimic
+legitimate clients’ traffic patterns to avoid detection. We design
+a software-defined network (SDN) based system called SPIFFY
+that addresses key practical challenges in turning this high-level
+idea into a concrete defense mechanism, and provide a practical
+solution to force a tradeoff between cost vs. detectability for link-
+flooding attacks. We develop fast traffic-engineering algorithms
+to achieve effective bandwidth expansion and suggest scalable
+monitoring algorithms for tracking the change in traffic-source
+behaviors. We demonstrate the effectiveness of SPIFFY using
+a real SDN testbed and large-scale packet-level and flow-level
+simulations."
+symp2016,CrossFire: An Analysis of Firefox Extension-Reuse Vulnerabilities,"Extension architectures of popular web browsers
+have been carefully studied by the research community; however,
+the security impact of interactions between different extensions
+installed on a given system has received comparatively little
+attention. In this paper, we consider the impact of the lack of isola-
+tion between traditional Firefox browser extensions, and identify
+a novel extension-reuse vulnerability that allows adversaries
+to launch stealthy attacks against users. This attack leverages
+capability leaks from legitimate extensions to avoid the inclusion
+of security-sensitive API calls within the malicious extension itself,
+rendering extensions that use this technique difficult to detect
+through the manual vetting process that underpins the security
+of the Firefox extension ecosystem.
+
+We then present CROSSFIRE, a lightweight static analyzer to
+detect instances of extension-reuse vulnerabilities. CROSSFIRE
+uses a multi-stage static analysis to efficiently identify potential
+capability leaks in vulnerable, benign extensions. If a suspected
+vulnerability is identified, CROSSFIRE then produces a proof-of-
+concept exploit instance – or, alternatively, an exploit template
+that can be adapted to rapidly craft a working attack that
+validates the vulnerability.
+
+To ascertain the prevalence of extension-reuse vulnerabilities,
+we performed a detailed analysis of the top 10 Firefox extensions,
+and ran further experiments on a random sample drawn from
+the top 2,000. The results indicate that popular extensions,
+downloaded by millions of users, contain numerous exploitable
+extension-reuse vulnerabilities. A case study also provides anecdo-
+tal evidence that malicious extensions exploiting extension-reuse
+vulnerabilities are indeed effective at cloaking themselves from
+extension vetters."
+symp2016,It’s Free for a Reason: Exploring the Ecosystem of Free Live Streaming Services,"Recent years have seen extensive growth of services
+enabling free broadcasts of live streams on the Web. Free live
+streaming (FLIS) services attract millions of viewers and make
+heavy use of deceptive advertisements. Despite the immense
+popularity of these services, little is known about the parties
+that facilitate it and maintain webpages to index links for free
+viewership.
+
+This paper presents a comprehensive analysis of the FLIS
+ecosystem by mapping all parties involved in the anonymous
+broadcast of live streams, discovering their modus operandi,
+and quantifying the consequences for common Internet users
+who utilize these services. We develop an infrastructure that
+enables us to perform more than 850,000 visits by identifying
+5,685 free live streaming domains, and analyze more than 1
+Terabyte of traffic to map the parties that constitute the FLIS
+ecosystem. On the one hand, our analysis reveals that users of
+FLIS websites are generally exposed to deceptive advertisements,
+malware, malicious browser extensions, and fraudulent scams.
+On the other hand, we find that FLIS parties are often reported
+for copyright violations and host their infrastructure predomi-
+nantly in Europe and Belize. At the same time, we encounter
+substandard advertisement set-ups by the FLIS parties, along
+with potential trademark infringements through the abuse of
+domain names and logos of popular TV channels.
+
+Given the magnitude of the discovered abuse, we engineer
+features that characterize FLIS pages and build a classifier to
+identify FLIS pages with high accuracy and low false positives,
+in an effort to help human analysts identify malicious services
+and, whenever appropriate, initiate content-takedown requests."
+symp2016,Attack Patterns for Black-Box Security Testing of Multi-Party Web Applications,"The advent of Software-as-a-Service (SaaS) has led
+to the development of multi-party web applications (MPWAs).
+MPWAs rely on core trusted third-party systems (e.g., payment
+servers, identity providers) and protocols such as Cashier-as-a-
+Service (CaaS), Single Sign-On (SSO) to deliver business services
+to users. Motivated by the large number of attacks discovered
+against MPWAs and by the lack of a single general-purpose
+application-agnostic technique to support their discovery, we
+propose an automatic technique based on attack patterns for
+black-box, security testing of MPWAs. Our approach stems from
+the observation that attacks against popular MPWAs share a
+number of similarities, even if the underlying protocols and
+services are different. In this paper, we target six different
+replay attacks, a login CSRF attack and a persistent XSS
+attack. Firstly, we propose a methodology in which security
+experts can create attack patterns from known attacks. Secondly,
+we present a security testing framework that leverages attack
+patterns to automatically generate test cases for testing the
+security of MPWAs. We implemented our ideas on top of OWASP
+ZAP (a popular, open-source penetration testing tool), created
+seven attack patterns that correspond to thirteen prominent
+attacks from the literature and discovered twenty one previously
+unknown vulnerabilities in prominent MPWAs (e.g., twitter.com,
+developer.linkedin.com, pinterest.com), including MPWAs that do
+not belong to SSO and CaaS families."
+symp2016,Are these Ads Safe: Detecting Hidden Attacks through the Mobile App-Web Interfaces,"Mobile users are increasingly becoming targets of
+malware infections and scams. Some platforms, such as Android,
+are more open than others and are therefore easier to exploit than
+other platforms. In order to curb such attacks it is important
+to know how these attacks originate. We take a previously
+unexplored step in this direction and look for the answer at
+the interface between mobile apps and the Web. Numerous in-
+app advertisements work at this interface: when the user taps on
+an advertisement, she is led to a web page which may further
+redirect until the user reaches the final destination. Similarly,
+applications also embed web links that again lead to the outside
+Web. Even though the original application may not be malicious,
+the Web destinations that the user visits could play an important
+role in propagating attacks.
+
+In order to study such attacks we develop a systematic
+methodology consisting of three components related to triggering
+web links and advertisements, detecting malware and scam
+campaigns, and determining the provenance of such campaigns
+reaching the user. We have realized this methodology through
+various techniques and contributions and have developed a ro-
+bust, integrated system capable of running continuously without
+human intervention. We deployed this system for a two-month
+period and analyzed over 600,000 applications in the United
+States and in China while triggering a total of about 1.5 million
+links in applications to the Web. We gain a general understanding
+of attacks through the app-web interface as well as make
+several interesting findings, including a rogue antivirus scam,
+free iPad and iPhone scams, and advertisements propagating
+SMS trojans disguised as fake movie players. In broader terms,
+our system enables locating attacks and identifying the parties
+(such as specific ad networks, websites, and applications) that
+intentionally or unintentionally let them reach the end users and,
+thus, increasing accountability from these parties."
+symp2016,Enabling Practical Software-defined Networking Security Applications with OFX,"Software Defined Networks (SDNs) are an appeal-
+ing platform for network security applications. However, existing
+approaches to building security applications on SDNs are not
+practical because of performance and deployment challenges. Net-
+work security applications often need to analyze and process traf-
+fic in more advanced ways than SDN data plane implementations,
+such as OpenFlow, allow. Much of an application ends up running
+on the centralized controller, which forms an inherent bottleneck.
+Researchers have proposed application specific modifications to
+the underlying data plane to gain performance, but this results
+in a solution that is not deployable as it requires new switches
+and does not support all network security applications. In this
+paper, we introduce OFX (the OpenFlow Extension Framework)
+which harnesses the processing power of network switches to
+enable practical SDN security applications within an existing
+OpenFlow infrastructure. OFX allows applications to dynamically
+load software modules directly onto unmodified network switches
+where application-dependent processing/monitoring can execute
+closer to the data plane at a rate much closer to line speed. We
+implemented OFX modules for security applications including
+Silverline (ACSAC’13), BotMiner (Sec’08), and several others
+motivated by the custom OpenFlow extensions in Avant-Guard
+(CCS’13). We evaluated OFX on a Pica 8 3290 switch and
+found that processing traffic in an OFX module running on the
+switch had orders of magnitude less overhead than processing
+traffic at the controller. OFX increased the performance of the
+evaluated security application by 20-40x as compared to standard
+OpenFlow implementations and up to 1.25x when compared to
+middlebox implementations running on dedicated servers. This is
+all achieved without the need for additional or modified hardware."
+symp2016,Forwarding-Loop Attacks in Content Delivery Networks,"We describe how malicious customers can attack
+the availability of Content Delivery Networks (CDNs) by creating
+forwarding loops inside one CDN or across multiple CDNs. Such
+forwarding loops cause one request to be processed repeatedly or
+even indefinitely, resulting in undesired resource consumption and
+potential Denial-of-Service attacks. To evaluate the practicality
+of such forwarding-loop attacks, we examined 16 popular CDN
+providers and found all of them are vulnerable to some form of
+such attacks. While some CDNs appear to be aware of this threat
+and have adopted specific forwarding-loop detection mechanisms,
+we discovered that they can all be bypassed with new attack tech-
+niques. Although conceptually simple, a comprehensive defense
+requires collaboration among all CDNs. Given that hurdle, we
+also discuss other mitigations that individual CDN can implement
+immediately. At a higher level, our work underscores the hazards
+that can arise when a networked system provides users with
+control over forwarding, particularly in a context that lacks a
+single point of administrative control."
+symp2016,CDN-on-Demand:  An affordable DDoS Defense via Untrusted Clouds,"We present CDN-on-Demand, a software-based de-
+fense that administrators of small to medium websites install
+to resist powerful DDoS attacks, with a fraction of the cost of
+comparable commercial CDN services. Upon excessive load, CDN-
+on-Demand serves clients from a scalable set of proxies that it
+automatically deploys on multiple IaaS cloud providers. CDN-on-
+Demand can use less expensive and less trusted clouds to minimize
+costs. This is facilitated by the clientless secure-objects, which is
+a new mechanism we present. This mechanism avoids trusting
+the hosts with private keys or user-data, yet does not require
+installing new client programs. CDN-on-Demand also introduces
+the origin-connectivity mechanism, which ensures that essential
+communication with the content-origin is possible, even in case
+of severe DoS attacks.
+
+A critical feature of CDN-on-Demand is in facilitating easy
+deployment. We introduce the origin-gateway module, which
+deploys CDN-on-Demand automatically and transparently, i.e.,
+without introducing changes to web-server configuration or
+website content. We implement CDN-on-Demand and evaluate
+each component separately as well as the complete system."
+symp2016,Towards SDN-Defined Programmable BYOD (Bring Your Own Device) Security,"An emerging trend in corporate network admin-
+istration is BYOD (Bring Your Own Device). Although with
+many advantages, the paradigm shift presents new challenges in
+security to enterprise networks. While existing solutions such as
+Mobile Device Management (MDM) focus mainly on controlling
+and protecting device data, they fall short in providing a holistic
+network protection system. New innovation is needed in providing
+administrators with sophisticated network policies and control
+capabilities over the devices and mobile applications (apps). In
+this paper, we present PBS (Programmable BYOD Security),
+a new security solution to enable fine-grained, application-
+level network security programmability for the purpose of
+network management and policy enforcement on mobile apps
+and devices. Our work is motivated by another emerging and
+powerful concept, SDN (Software-Defined Networking). With
+a novel abstraction of mobile device elements (e.g., apps and
+network interfaces on the device) into conventional SDN network
+elements, PBS intends to provide network-wide, context-aware,
+app-specific policy enforcement at run-time without introducing
+much overhead on a resource-constrained mobile device, and
+without the actual deployment of SDN switches in enterprise
+networks. We implement a prototype system of PBS, with a
+controller component that runs a BYOD policy program on
+existing SDN controllers and a client component, PBS-DROID,
+for Android devices. Our evaluation shows that PBS is an effective
+and practical solution for BYOD security."
+symp2016,Centrally Banked Cryptocurrencies,"Current cryptocurrencies, starting with Bitcoin,
+build a decentralized blockchain-based transaction ledger, main-
+tained through proofs-of-work that also serve to generate a
+monetary supply. Such decentralization has benefits, such as
+independence from national political control, but also significant
+limitations in terms of computational costs and scalability. We
+introduce RSCoin, a cryptocurrency framework in which central
+banks maintain complete control over the monetary supply, but
+rely on a distributed set of authorities, or mintettes, to prevent
+double-spending. While monetary policy is centralized, RSCoin
+still provides strong transparency and auditability guarantees. We
+demonstrate, both theoretically and experimentally, the benefits
+of a modest degree of centralization, such as the elimination
+of wasteful hashing and a scalable system for avoiding double-
+spending attacks."
+symp2016,Equihash: Asymmetric Proof-of-Work Based on the Generalized Birthday Problem,"The proof-of-work is a central concept in modern
+cryptocurrencies and denial-of-service protection tools, but the
+requirement for fast verification so far made it an easy prey for
+GPU-, ASIC-, and botnet-equipped users. The attempts to rely on
+memory-intensive computations in order to remedy the disparity
+between architectures have resulted in slow or broken schemes.
+
+In this paper we solve this open problem and show how to
+construct an asymmetric proof-of-work (PoW) based on a compu-
+tationally hard problem, which requires a lot of memory to gen-
+erate a proof (called ”memory-hardness” feature) but is instant
+to verify. Our primary proposal Equihash is a PoW based on the
+generalized birthday problem and enhanced Wagner’s algorithm
+for it. We introduce the new technique of algorithm binding to
+prevent cost amortization and demonstrate that possible parallel
+implementations are constrained by memory bandwidth. Our
+scheme has tunable and steep time-space tradeoffs, which impose
+large computational penalties if less memory is used.
+
+Our solution is practical and ready to deploy: a reference
+implementation of a proof-of-work requiring 700 MB of RAM
+runs in 30 seconds on a 1.8 GHz CPU, increases the computations
+by the factor of 1000 if memory is halved, and presents a proof
+of just 120 bytes long.
+
+Keywords: Equihash, memory-hard, asymmetric, proof-of-
+work, client puzzle."
+symp2016,A Simple Generic Attack on Text Captchas,"Text-based Captchas have been widely deployed
+across the Internet to defend against undesirable or malicious
+bot programs. Many attacks have been proposed; these fine prior
+art advanced the scientific understanding of Captcha robustness,
+but most of them have a limited applicability. In this paper,
+we report a simple, low-cost but powerful attack that effectively
+breaks a wide range of text Captchas with distinct design features,
+including those deployed by Google, Microsoft, Yahoo!, Amazon
+and other Internet giants. For all the schemes, our attack achieved
+a success rate ranging from 5% to 77%, and achieved an
+average speed of solving a puzzle in less than 15 seconds on
+a standard desktop computer (with a 3.3GHz Intel Core i3 CPU
+and 2 GB RAM). This is to date the simplest generic attack
+on text Captchas. Our attack is based on Log-Gabor filters; a
+famed application of Gabor filters in computer security is John
+Daugman’s iris recognition algorithm. Our work is the first to
+apply Gabor filters for breaking Captchas."
+symp2016,You are a Game Bot!: Uncovering Game Bots in MMORPGs via Self-similarity in the Wild,"Game bots are a critical threat to Massively Multi-
+player Online Role-Playing Games (MMORPGs) because they
+can seriously damage the reputation and in-game economy
+equilibrium of MMORPGs. Existing game bot detection tech-
+niques are not only generally sensitive to changes in game
+contents but also limited in detecting emerging bot patterns
+that were hitherto unknown. To overcome the limitation of
+learning bot patterns over time, we propose a framework that
+detects game bots through machine learning technique. The
+proposed framework utilizes self-similarity to effectively measure
+the frequency of repeated activities per player over time, which is
+an important clue to identifying bots. Consequently, we use real-
+world MMORPG (“Lineage”, “Aion” and “Blade & Soul”)
+datasets to evaluate the feasibility of the proposed framework.
+Our experimental results demonstrate that 1) self-similarity can
+be used as a general feature in various MMORPGs, 2) a detection
+model maintenance process with newly updated bot behaviors
+can be implemented, and 3) our bot detection framework is
+practicable."
+symp2016,Tracking Mobile Web Users Through Motion Sensors:  Attacks and Defenses,"Modern smartphones contain motion sensors, such
+as accelerometers and gyroscopes. These sensors have many
+useful applications; however, they can also be used to uniquely
+identify a phone by measuring anomalies in the signals, which
+are a result of manufacturing imperfections. Such measurements
+can be conducted surreptitiously by web page publishers or ad-
+vertisers and can thus be used to track users across applications,
+websites, and visits.
+
+We analyze how well sensor fingerprinting works under real-
+world constraints. We first develop a highly accurate finger-
+printing mechanism that combines multiple motion sensors and
+makes use of inaudible audio stimulation to improve detection.
+We evaluate this mechanism using measurements from a large
+collection of smartphones, in both lab and public conditions. We
+then analyze techniques to mitigate sensor fingerprinting either
+by calibrating the sensors to eliminate the signal anomalies, or
+by adding noise that obfuscates the anomalies. We evaluate the
+impact of calibration and obfuscation techniques on the classifier
+accuracy; we also look at how such mitigation techniques impact
+the utility of the motion sensors."
+symp2016,The Price of Free:  Privacy Leakage in Personalized Mobile In-Apps Ads,"In-app advertising is an essential part of the ecosys-
+tem of free mobile applications. On the surface, this creates a
+win-win situation where app developers can profit from their
+work without charging the users. However, as in the case of
+web advertising, ad-networks behind in-app advertising employ
+personalization to improve the effectiveness/profitability of their
+ad-placement. This need for serving personalized advertisements
+in turn motivates ad-networks to collect data about users and
+profile them. As such, “free” apps are only free in monetary
+terms; they come with the price of potential privacy concerns.
+The question is, how much data are users giving away to pay for
+“free apps”?
+
+In this paper, we study how much of the user’s interest and
+demographic information is known to these major ad networks
+on the mobile platform. We also study whether personalized ads
+can be used by the hosting apps to reconstruct some of the
+user information collected by the ad network. By collecting more
+than two hundred real user profiles through surveys, as well as
+the ads seen by the surveyed users, we found that mobile ads
+delivered by a major ad network, Google, are personalized based
+on both users’ demographic and interest profiles. In particular,
+we showed that there is a statistically significant correlation
+between observed ads and the user’s profile. Since users of
+different demographics tend to get ads of different contents,
+we also demonstrated the likelihood of learning users’ sensitive
+demographic information such as gender (75% accuracy) and
+parental status (66% accuracy) through personalized ads. These
+findings illustrate that in-app advertising can leak potentially
+sensitive user information to any app that hosts personalized
+ads, and ad networks’ current protection mechanisms are not
+sufficient for safe-guarding users’ sensitive personal information."
+symp2016,What Mobile Ads Know About Mobile Users,"We analyze the software stack of popular mobile
+advertising libraries on Android and investigate how they protect
+the users of advertising-supported apps from malicious advertis-
+ing. We find that, by and large, Android advertising libraries
+properly separate the privileges of the ads from the host app by
+confining ads to dedicated browser instances that correctly apply
+the same origin policy.
+
+We then demonstrate how malicious ads can infer sensitive
+information about users by accessing external storage, which is
+essential for media-rich ads in order to cache video and images.
+Even though the same origin policy prevents confined ads from
+reading other apps’ external-storage files, it does not prevent
+them from learning that a file with a particular name exists. We
+show how, depending on the app, the mere existence of a file
+can reveal sensitive information about the user. For example, if
+the user has a pharmacy price-comparison app installed on the
+device, the presence of external-storage files with certain names
+reveals which drugs the user has looked for.
+
+We conclude with our recommendations for redesigning
+mobile advertising software to better protect users from malicious
+advertising."
+symp2016,Free for All!  Assessing User Data Exposure to Advertising Libraries on Android,"Many studies focused on detecting and measuring
+the security and privacy risks associated with the integration of
+advertising libraries in mobile apps. These studies consistently
+demonstrate the abuses of existing ad libraries. However, to fully
+assess the risks of an app that uses an advertising library, we
+need to take into account not only the current behaviors but all of
+the allowed behaviors that could result in the compromise of user
+data confidentiality. Ad libraries on Android have potential for
+greater data collection through at least four major channels: using
+unprotected APIs to learn other apps’ information on the phone
+(e.g., app names); using protected APIs via permissions inherited
+from the host app to access sensitive information (e.g. Google and
+Facebook account information, geo locations); gaining access to
+files which the host app stores in its own protection domain; and
+observing user inputs into the host app.
+
+In this work, we systematically explore the potential reach
+of advertising libraries through these channels. We design a
+framework called Pluto that can be leveraged to analyze an
+app and discover whether it exposes targeted user data—such as
+contact information, interests, demographics, medical conditions
+and so on—-to an opportunistic ad library. We present a
+prototype implementation of Pluto, that embodies novel strategies
+for using natural language processing to illustrate what targeted
+data can potentially be learned from an ad network using files
+and user inputs. Pluto also leverages machine learning and data
+mining models to reveal what advertising networks can learn from
+the list of installed apps. We validate Pluto with a collection of
+apps for which we have determined ground truth about targeted
+data they may reveal, together with a data set derived from a
+survey we conducted that gives ground truth for targeted data
+and corresponding lists of installed apps for about 300 users. We
+use these to show that Pluto, and hence also opportunistic ad
+networks, can achieve 75% recall and 80% precision for selected
+targeted data coming from app files and inputs, and even better
+results for certain targeted data based on the list of installed
+apps. Pluto is the first tool that estimates the risk associated
+with integrating advertising in apps based on the four available
+channels and arbitrary sets of targeted data."
+symp2016,Practical Attacks Against Privacy and Availability in 4G/LTE Mobile Communication Systems,"Mobile communication systems are now an essential
+part of life throughout the world. Fourth generation “Long
+Term Evolution” (LTE) mobile communication networks are
+being deployed. The LTE suite of specifications is considered
+to be significantly better than its predecessors not only in terms
+of functionality but also with respect to security and privacy
+for subscribers. We carefully analyzed LTE access network
+protocol specifications and uncovered several vulnerabilities.
+Using commercial LTE mobile devices in real LTE networks,
+we demonstrate inexpensive, and practical attacks exploiting
+these vulnerabilities. Our first class of attacks consists of three
+different ways of making an LTE device leak its location: In
+our experiments, a semi-passive attacker can locate an LTE
+device within a 2 km2 area in a city whereas an active attacker
+can precisely locate an LTE device using GPS co-ordinates
+or trilateration via cell-tower signal strength information. Our
+second class of attacks can persistently deny some or all services
+to a target LTE device. To the best of our knowledge, our work
+constitutes the first publicly reported practical attacks against LTE
+access network protocols.
+
+We present several countermeasures to resist our specific
+attacks. We also discuss possible trade-off considerations that may
+explain why these vulnerabilities exist. We argue that justification
+for these trade-offs may no longer valid. We recommend that
+safety margins introduced into future specifications to address
+such trade-offs should incorporate greater agility to accommodate
+subsequent changes in the trade-off equilibrium."
+symp2016,Towards Automated Dynamic Analysis for Linux-based Embedded Firmware,"Commercial-off-the-shelf (COTS) network-enabled
+embedded devices are usually controlled by vendor firmware
+to perform integral functions in our daily lives. For example,
+wireless home routers are often the first and only line of defense
+that separates a home user’s personal computing and information
+devices from the Internet. Such a vital and privileged position in
+the user’s network requires that these devices operate securely.
+Unfortunately, recent research and anecdotal evidence suggest
+that such security assumptions are not at all upheld by the devices
+deployed around the world.
+
+A first step to assess the security of such embedded device
+firmware is the accurate identification of vulnerabilities. However,
+the market offers a large variety of these embedded devices,
+which severely impacts the scalability of existing approaches in
+this area. In this paper, we present FIRMADYNE, the first
+automated dynamic analysis system that specifically targets Linux-
+based firmware on network-connected COTS devices in a scalable
+manner. We identify a series of challenges inherent to the dynamic
+analysis of COTS firmware, and discuss how our design decisions
+address them. At its core, FIRMADYNE relies on software-based
+full system emulation with an instrumented kernel to achieve the
+scalability necessary to analyze thousands of firmware binaries
+automatically.
+
+We evaluate FIRMADYNE on a real-world dataset of 23,035
+firmware images across 42 device vendors gathered by our system.
+Using a sample of 74 exploits on the 9,486 firmware images that
+our system can successfully extract, we discover that 887 firmware
+images spanning at least 89 distinct products are vulnerable to one
+or more of the sampled exploit(s). This includes 14 previously-
+unknown vulnerabilities that were discovered with the aid of
+our framework, which affect 69 firmware images spanning at
+least 12 distinct products. Furthermore, our results show that
+11 of our tested attacks affect firmware images from more than
+one vendor, suggesting that code-sharing and common upstream
+manufacturers (OEMs) are quite prevalent."
+symp2016,discovRE:  Efficient Cross-Architecture Identification of Bugs in Binary Code,"The identification of security-critical vulnerabilities
+is a key for protecting computer systems. Being able to perform
+this process at the binary level is very important given that
+many software projects are closed-source. Even if the source
+code is available, compilation may create a mismatch between
+the source code and the binary code that is executed by the
+processor, causing analyses that are performed on source code to
+fail at detecting certain bugs and thus potential vulnerabilities.
+Existing approaches to find bugs in binary code 1) use dynamic
+analysis, which is difficult for firmware; 2) handle only a single
+architecture; or 3) use semantic similarity, which is very slow
+when analyzing large code bases.
+
+In this paper, we present a new approach to efficiently
+search for similar functions in binary code. We use this method
+to identify known bugs in binaries as follows: starting with
+a vulnerable binary function, we identify similar functions in
+other binaries across different compilers, optimization levels,
+operating systems, and CPU architectures. The main idea is to
+compute similarity between functions based on the structure of
+the corresponding control flow graphs. To minimize this costly
+computation, we employ an efficient pre-filter based on numeric
+features to quickly identify a small set of candidate functions.
+This allows us to efficiently search for similar functions in large
+code bases.
+
+We have designed and implemented a prototype of our
+approach, called discovRE, that supports four instruction set
+architectures (x86, x64, ARM, MIPS). We show that discovRE is
+four orders of magnitude faster than the state-of-the-art academic
+approach for cross-architecture bug search in binaries. We also
+show that we can identify Heartbleed and POODLE vulnerabilities
+in an Android system image that contains over 130,000 native
+ARM functions in about 80 milliseconds."
+symp2016,Driller:  Augmenting Fuzzing Through Selective Symbolic Execution,"Memory corruption vulnerabilities are an ever-
+present risk in software, which attackers can exploit to obtain
+unauthorized access to confidential information. As products
+with access to sensitive data are becoming more prevalent, the
+number of potentially exploitable systems is also increasing,
+resulting in a greater need for automated software vetting tools.
+DARPA recently funded a competition, with millions of dollars
+in prize money, to further research focusing on automated
+vulnerability finding and patching, showing the importance of
+research in this area. Current techniques for finding potential
+bugs include static, dynamic, and concolic analysis systems,
+which each having their own advantages and disadvantages. A
+common limitation of systems designed to create inputs which
+trigger vulnerabilities is that they only find shallow bugs and
+struggle to exercise deeper paths in executables.
+
+We present Driller, a hybrid vulnerability excavation tool
+which leverages fuzzing and selective concolic execution in
+a complementary manner, to find deeper bugs. Inexpensive
+fuzzing is used to exercise compartments of an application, while
+concolic execution is used to generate inputs which satisfy the
+complex checks separating the compartments. By combining the
+strengths of the two techniques, we mitigate their weaknesses,
+avoiding the path explosion inherent in concolic analysis and the
+incompleteness of fuzzing. Driller uses selective concolic execution
+to explore only the paths deemed interesting by the fuzzer and to
+generate inputs for conditions that the fuzzer cannot satisfy. We
+evaluate Driller on 126 applications released in the qualifying
+event of the DARPA Cyber Grand Challenge and show its
+efficacy by identifying the same number of vulnerabilities, in
+the same time, as the top-scoring team of the qualifying event."
+symp2016,VTrust:  Regaining Trust on Virtual Calls,"Virtual function calls are one of the most popu-
+lar control-flow hijack attack targets. Compilers use a virtual
+function pointer table, called a VTable, to dynamically dispatch
+virtual function calls. These VTables are read-only, but pointers to
+them are not. VTable pointers reside in objects that are writable,
+allowing attackers to overwrite them. As a result, attackers can
+divert the control-flow of virtual function calls and launch VTable
+hijacking attacks. Researchers have proposed several solutions to
+protect virtual calls. However, they either incur high performance
+overhead or fail to defeat some VTable hijacking attacks.
+
+In this paper, we propose a lightweight defense solution,
+VTrust, to protect all virtual function calls from VTable hijack-
+ing attacks. It consists of two independent layers of defenses:
+virtual function type enforcement and VTable pointer sanitization.
+Combined with modern compilers’ default configuration, i.e.,
+placing VTables in read-only memory, VTrust can defeat all
+VTable hijacking attacks and supports modularity, allowing us
+to harden applications module by module. We have implemented
+a prototype on the LLVM compiler framework. Our experiments
+show that this solution only introduces a low performance
+overhead, and it defeats real world VTable hijacking attacks."
+symp2016,Protecting C++ Dynamic Dispatch Through VTable Interleaving,"With new defenses against traditional control-flow
+attacks like stack buffer overflows, attackers are increasingly
+using more advanced mechanisms to take control of execution.
+One common such attack is vtable hijacking, in which the attacker
+exploits bugs in C++ programs to overwrite pointers to the virtual
+method tables (vtables) of objects. We present a novel defense
+against this attack. The key insight of our approach is a new
+way of laying out vtables in memory through careful ordering
+and interleaving. Although this layout is very different from a
+traditional layout, it is backwards compatible with the traditional
+way of performing dynamic dispatch. Most importantly, with this
+new layout, checking the validity of a vtable at runtime becomes
+an efficient range check, rather than a set membership test.
+Compared to prior approaches that provide similar guarantees,
+our approach does not use any profiling information, has lower
+performance overhead (about 1%) and has lower code bloat
+overhead (about 1.7%)."
+symp2016,ProTracer:  Towards Practical Provenance Tracing by Alternating Between Logging and Tainting,"Provenance tracing is a very important approach
+to Advanced Persistent Threat (APT) attack detection and in-
+vestigation. Existing techniques either suffer from the depen-
+dence explosion problem or have non-trivial space and run-
+time overhead, which hinder their application in practice. We
+propose ProTracer, a lightweight provenance tracing system that
+alternates between system event logging and unit level taint
+propagation. The technique is built on an on-the-fly system event
+processing infrastructure that features a very lightweight kernel
+module and a sophisticated user space daemon that performs
+concurrent and out-of-order event processing. The evaluation
+with different realistic system workloads and a number of attack
+cases show that ProTracer only produces 13MB log data per
+day, and 0.84GB(Server)/2.32GB(Client) in 3 months without
+losing any important information. The space consumption is
+only < 1.28% of the state-of-the-art, 7 times smaller than an
+off-line garbage collection technique. The run-time overhead
+averages <7% for servers and <5% for regular applications.
+The generated attack causal graphs are a few times smaller than
+those by existing techniques while they are equally informative."
+symp2016,Who’s in Control of Your Control System?  Device Fingerprinting for Cyber-Physical Systems,"Industrial control system (ICS) networks used in
+critical infrastructures such as the power grid present a unique
+set of security challenges. The distributed networks are difficult
+to physically secure, legacy equipment can make cryptography
+and regular patches virtually impossible, and compromises can
+result in catastrophic physical damage. To address these concerns,
+this research proposes two device type fingerprinting methods
+designed to augment existing intrusion detection methods in
+the ICS environment. The first method measures data response
+processing times and takes advantage of the static and low-
+latency nature of dedicated ICS networks to develop accurate
+fingerprints, while the second method uses the physical operation
+times to develop a unique signature for each device type.
+Additionally, the physical fingerprinting method is extended to
+develop a completely new class of fingerprint generation that
+requires neither prior access to the network nor an example target
+device. Fingerprint classification accuracy is evaluated using a
+combination of a real world five month dataset from a live power
+substation and controlled lab experiments. Finally, simple forgery
+attempts are launched against the methods to investigate their
+strength under attack."
+symp2016,SKEE:  A lightweight Secure Kernel-level Execution Environment for ARM,"Previous research on kernel monitoring and protec-
+tion widely relies on higher privileged system components, such
+as hardware virtualization extensions, to isolate security tools
+from potential kernel attacks. These approaches increase both the
+maintenance effort and the code base size of privileged system
+components, which consequently increases the risk of having
+security vulnerabilities. SKEE, which stands for Secure Kernel-
+level Execution Environment, solves this fundamental problem.
+SKEE is a novel system that provides an isolated lightweight
+execution environment at the same privilege level of the kernel.
+SKEE is designed for commodity ARM platforms. Its main goal
+is to allow secure monitoring and protection of the kernel without
+active involvement of higher privileged software.
+
+SKEE provides a set of novel techniques to guarantee isola-
+tion. It creates a protected address space that is not accessible
+to the kernel, which is challenging to achieve when both the
+kernel and the isolated environment share the same privilege
+level. SKEE solves this challenge by preventing the kernel from
+managing its own memory translation tables. Hence, the kernel is
+forced to switch to SKEE to modify the system’s memory layout.
+In turn, SKEE verifies that the requested modification does not
+compromise the isolation of the protected address space. Switch-
+ing from the OS kernel to SKEE exclusively passes through a
+well-controlled switch gate. This switch gate is carefully designed
+so that its execution sequence is atomic and deterministic. These
+properties combined guarantee that a potentially compromised
+kernel cannot exploit the switching sequence to compromise the
+isolation. If the kernel attempts to violate these properties, it
+will only cause the system to fail without exposing the protected
+address space.
+
+SKEE exclusively controls access permissions of the entire
+OS memory. Hence, it prevents attacks that attempt to inject
+unverified code into the kernel. Moreover, it can be easily
+extended to intercept other system events in order to support
+various intrusion detection and integrity verification tools. This
+paper presents a SKEE prototype that runs on both 32-bit
+ARMv7 and 64-bit ARMv8 architectures. Performance evaluation
+results demonstrate that SKEE is a practical solution for real
+world systems.
+
+1These authors contributed equally to this work"
+symp2016,OpenSGX:  An Open Platform for SGX Research,"Hardware technologies for trusted computing, or
+trusted execution environments (TEEs), have rapidly matured
+over the last decade. In fact, TEEs are at the brink of widespread
+commoditization with the recent introduction of Intel Software
+Guard Extensions (Intel SGX). Despite such rapid development
+of TEE, software technologies for TEE significantly lag behind
+their hardware counterpart, and currently only a select group
+of researchers have the privilege of accessing this technology. To
+address this problem, we develop an open source platform, called
+OpenSGX, that emulates Intel SGX hardware components at the
+instruction level and provides new system software components
+necessarily required for full TEE exploration. We expect that the
+OpenSGX framework can serve as an open platform for SGX
+research, with the following contributions. First, we develop a
+fully functional, instruction-compatible emulator of Intel SGX
+for enabling the exploration of software/hardware design space,
+and development of enclave programs. OpenSGX provides a
+platform for SGX development, meaning that it provides not
+just emulation but also operating system components, an enclave
+program loader/packager, an OpenSGX user library, debugging,
+and performance monitoring. Second, to show OpenSGX’s use
+cases, we applied OpenSGX to protect sensitive information (e.g.,
+directory) of Tor nodes and evaluated their potential performance
+impacts. Therefore, we believe OpenSGX has great potential
+for broader communities to spark new research on soon-to-be-
+commodity Intel SGX."
+symp2016,Efficient Private Statistics with Succinct Sketches,"Large-scale collection of contextual information is
+often essential in order to gather statistics, train machine learning
+models, and extract knowledge from data. The ability to do
+so in a privacy-preserving way – i.e., without collecting fine-
+grained user data – enables a number of additional compu-
+tational scenarios that would be hard, or outright impossible,
+to realize without strong privacy guarantees. In this paper, we
+present the design and implementation of practical techniques
+for privately gathering statistics from large data streams. We
+build on efficient cryptographic protocols for private aggregation
+and on data structures for succinct data representation, namely,
+Count-Min Sketch and Count Sketch. These allow us to reduce
+the communication and computation complexity incurred by each
+data source (e.g., end-users) from linear to logarithmic in the size
+of their input, while introducing a parametrized upper-bounded
+error that does not compromise the quality of the statistics. We
+then show how to use our techniques, efficiently, to instantiate
+real-world privacy-friendly systems, supporting recommendations
+for media streaming services, prediction of user locations, and
+computation of median statistics for Tor hidden services."
+symp2016,Dependence Makes You Vulnerable:  Differential Privacy Under Dependent Tuples,"Differential privacy (DP) is a widely accepted
+mathematical framework for protecting data privacy. Simply
+stated, it guarantees that the distribution of query results
+changes only slightly due to the modification of any one tuple
+in the database. This allows protection, even against powerful
+adversaries, who know the entire database except one tuple. For
+providing this guarantee, differential privacy mechanisms assume
+independence of tuples in the database – a vulnerable assumption
+that can lead to degradation in expected privacy levels especially
+when applied to real-world datasets that manifest natural depen-
+dence owing to various social, behavioral, and genetic relation-
+ships between users. In this paper, we make several contributions
+that not only demonstrate the feasibility of exploiting the above
+vulnerability but also provide steps towards mitigating it. First,
+we present an inference attack, using real datasets, where an
+adversary leverages the probabilistic dependence between tuples
+to extract users’ sensitive information from differentially private
+query results (violating the DP guarantees). Second, we introduce
+the notion of dependent differential privacy (DDP) that accounts
+for the dependence that exists between tuples and propose a
+dependent perturbation mechanism (DPM) to achieve the privacy
+guarantees in DDP. Finally, using a combination of theoretical
+analysis and extensive experiments involving different classes of
+queries (e.g., machine learning queries, graph queries) issued over
+multiple large-scale real-world datasets, we show that our DPM
+consistently outperforms state-of-the-art approaches in managing
+the privacy-utility tradeoffs for dependent data."
+symp2016,Privacy-Preserving Shortest Path Computation,"Navigation is one of the most popular cloud comput-
+ing services. But in virtually all cloud-based navigation systems,
+the client must reveal her location and destination to the cloud
+service provider in order to learn the fastest route. In this
+work, we present a cryptographic protocol for navigation on
+city streets that provides privacy for both the client’s location
+and the service provider’s routing data. Our key ingredient is
+a novel method for compressing the next-hop routing matrices
+in networks such as city street maps. Applying our compression
+method to the map of Los Angeles, for example, we achieve over
+tenfold reduction in the representation size. In conjunction with
+other cryptographic techniques, this compressed representation
+results in an efficient protocol suitable for fully-private real-time
+navigation on city streets. We demonstrate the practicality of our
+protocol by benchmarking it on real street map data for major
+cities such as San Francisco and Washington, D.C."
+symp2016,LinkMirage:  Enabling Privacy-preserving Analytics on Social Relationships,"Social relationships present a critical foundation
+for many real-world applications. However, both users and
+online social network (OSN) providers are hesitant to share
+social relationships with untrusted external applications due to
+privacy concerns. In this work, we design LinkMirage, a system
+that mediates privacy-preserving access to social relationships.
+LinkMirage takes users’ social relationship graph as an input,
+obfuscates the social graph topology, and provides untrusted
+external applications with an obfuscated view of the social
+relationship graph while preserving graph utility.
+
+Our key contributions are (1) a novel algorithm for obfus-
+cating social relationship graph while preserving graph utility,
+(2) theoretical and experimental analysis of privacy and utility
+using real-world social network topologies, including a large-scale
+Google+ dataset with 940 million links. Our experimental results
+demonstrate that LinkMirage provides up to 10x improvement in
+privacy guarantees compared to the state-of-the-art approaches.
+Overall, LinkMirage enables the design of real-world applications
+such as recommendation systems, graph analytics, anonymous
+communications, and Sybil defenses while protecting the privacy
+of social relationships."
+symp2016,Do You See What I See?  Differential Treatment of Anonymous Users,"The utility of anonymous communication is un-
+dermined by a growing number of websites treating users of
+such services in a degraded fashion. The second-class treatment
+of anonymous users ranges from outright rejection to limiting
+their access to a subset of the service’s functionality or imposing
+hurdles such as CAPTCHA-solving. To date, the observation of
+such practices has relied upon anecdotal reports catalogued by
+frustrated anonymity users. We present a study to methodically
+enumerate and characterize, in the context of Tor, the treatment
+of anonymous users as second-class Web citizens.
+
+We focus on first-line blocking: at the transport layer, through
+reset or dropped connections; and at the application layer,
+through explicit blocks served from website home pages. Our
+study draws upon several data sources: comparisons of Internet-
+wide port scans from Tor exit nodes versus from control hosts;
+scans of the home pages of top-1,000 Alexa websites through every
+Tor exit; and analysis of nearly a year of historic HTTP crawls
+from Tor network and control hosts. We develop a methodology
+to distinguish censorship events from incidental failures such as
+those caused by packet loss or network outages, and incorporate
+consideration of the endemic churn in web-accessible services
+over both time and geographic diversity. We find clear evidence
+of Tor blocking on the Web, including 3.67% of the top-1,000
+Alexa sites. Some blocks specifically target Tor, while others result
+from fate-sharing when abuse-based automated blockers trigger
+due to misbehaving Web sessions sharing the same exit node."
+symp2016,Measuring and Mitigating AS-level Adversaries Against Tor,"The popularity of Tor as an anonymity system has
+made it a popular target for a variety of attacks. We focus on
+traffic correlation attacks, which are no longer solely in the realm
+of academic research with recent revelations about the NSA and
+GCHQ actively working to implement them in practice.
+
+Our first contribution is an empirical study that allows us to
+gain a high fidelity snapshot of the threat of traffic correlation
+attacks in the wild. We find that up to 40% of all circuits created
+by Tor are vulnerable to attacks by traffic correlation from
+Autonomous System (AS)-level adversaries, 42% from colluding
+AS-level adversaries, and 85% from state-level adversaries. In
+addition, we find that in some regions (notably, China and Iran)
+there exist many cases where over 95% of all possible circuits
+are vulnerable to correlation attacks, emphasizing the need for
+AS-aware relay-selection.
+
+To mitigate the threat of such attacks, we build Astoria–an
+AS-aware Tor client. Astoria leverages recent developments in
+network measurement to perform path-prediction and intelligent
+relay selection. Astoria reduces the number of vulnerable circuits
+to 2% against AS-level adversaries, under 5% against colluding
+AS-level adversaries, and 25% against state-level adversaries. In
+addition, Astoria load balances across the Tor network so as to
+not overload any set of relays."
+symp2016,Website Fingerprinting at Internet Scale,"The website fingerprinting attack aims to identify
+the content (i.e., a webpage accessed by a client) of encrypted
+and anonymized connections by observing patterns of data flows
+such as packet size and direction. This attack can be performed
+by a local passive eavesdropper – one of the weakest adversaries
+in the attacker model of anonymization networks such as Tor.
+
+In this paper, we present a novel website fingerprinting
+attack. Based on a simple and comprehensible idea, our approach
+outperforms all state-of-the-art methods in terms of classification
+accuracy while being computationally dramatically more efficient.
+In order to evaluate the severity of the website fingerprinting
+attack in reality, we collected the most representative dataset that
+has ever been built, where we avoid simplified assumptions made
+in the related work regarding selection and type of webpages and
+the size of the universe. Using this data, we explore the practical
+limits of website fingerprinting at Internet scale. Although our
+novel approach is by orders of magnitude computationally more
+efficient and superior in terms of detection accuracy, for the
+first time we show that no existing method – including our own
+– scales when applied in realistic settings. With our analysis,
+we explore neglected aspects of the attack and investigate the
+realistic probability of success for different strategies a real-world
+adversary may follow."
+symp2016,Extract Me If You Can:  Abusing PDF Parsers in Malware Detectors,"Owing to the popularity of the PDF format and the
+continued exploitation of Adobe Reader, the detection of malicious
+PDFs remains a concern. All existing detection techniques rely
+on the PDF parser to a certain extent, while the complexity of
+the PDF format leaves an abundant space for parser confusion.
+To quantify the difference between these parsers and Adobe
+Reader, we create a reference JavaScript extractor by directly
+tapping into Adobe Reader at locations identified through a
+mostly automatic binary analysis technique. By comparing the
+output of this reference extractor against that of several open-
+source JavaScript extractors on a large data set obtained from
+VirusTotal, we are able to identify hundreds of samples which
+existing extractors fail to extract JavaScript from. By analyzing
+these samples we are able to identify several weaknesses in each
+of these extractors. Based on these lessons, we apply several
+obfuscations on a malicious PDF sample, which can successfully
+evade all the malware detectors tested. We call this evasion
+technique a PDF parser confusion attack. Lastly, we demonstrate
+that the reference JavaScript extractor improves the accuracy of
+existing JavaScript-based classifiers and how it can be used to
+mitigate these parser limitations in a real-world setting."
+symp2016,Automatically Evading Classifiers:  A Case Study on PDF Malware Classifiers,"Machine learning is widely used to develop classi-
+fiers for security tasks. However, the robustness of these methods
+against motivated adversaries is uncertain. In this work, we
+propose a generic method to evaluate the robustness of classifiers
+under attack. The key idea is to stochastically manipulate a
+malicious sample to find a variant that preserves the malicious
+behavior but is classified as benign by the classifier. We present
+a general approach to search for evasive variants and report on
+results from experiments using our techniques against two PDF
+malware classifiers, PDFrate and Hidost. Our method is able to
+automatically find evasive variants for both classifiers for all of
+the 500 malicious seeds in our study. Our results suggest a general
+method for evaluating classifiers used in security applications, and
+raise serious doubts about the effectiveness of classifiers based
+on superficial features in the presence of adversaries."
+symp2016,"Cache, Trigger, Impersonate:  Enabling Context-Sensitive Honeyclient Analysis On-the-Wire","Today’s sophisticated web exploit kits use poly-
+morphic techniques to obfuscate each attack instance, making
+content-based signatures used by network intrusion detection
+systems far less effective than in years past. A dynamic analysis,
+or honeyclient analysis, of these exploits plays a key role in initially
+identifying new attacks in order to generate content signatures.
+While honeyclients can sweep the web for attacks, they provide
+no means of inspecting end-user traffic on-the-wire to identify
+attacks in real time. This leaves network operators dependent on
+third-party signatures that arrive too late, or not at all.
+
+In this paper, we introduce the design and implementation
+of a novel framework for adapting honeyclient-based systems to
+operate on-the-wire at scale. Specifically, we capture and store
+a configurable window of reassembled HTTP objects network-
+wide, use lightweight content rendering to establish the chain
+of requests leading up to a suspicious event, then serve the
+initial response content back to the honeyclient system on an
+isolated network. We demonstrate the power of our framework
+by analyzing a diverse collection of web-based exploit kits as
+they evolve over a one year period. Our case studies provide
+several interesting insights into the behavior of these exploit kits.
+Additionally, our empirical evaluations suggest that our approach
+offers significant operational value, and a single honeyclient
+server can readily support a large campus deployment."
+symp2016,LO-PHI:  Low-Observable Physical Host Instrumentation for Malware Analysis,"Dynamic-analysis techniques have become the
+linchpins of modern malware analysis. However, software-based
+methods have been shown to expose numerous artifacts, which
+can either be detected and subverted, or potentially interfere
+with the analysis altogether, making their results untrustworthy.
+The need for less-intrusive methods of analysis has led many
+researchers to utilize introspection in place of instrumenting the
+software itself. While most current introspection technologies
+have focused on virtual-machine introspection, we present a novel
+system, LO-PHI, which is capable of physical-machine introspec-
+tion of both non-volatile and volatile memory, i.e., hard disk and
+system memory. We demonstrate that we are able to provide anal-
+ysis capabilities comparable to existing solutions, whilst exposing
+zero software-based artifacts and minimal hardware artifacts. To
+demonstrate the usefulness of our system, we have developed
+a framework for performing automated binary analysis. We
+employ this framework to analyze numerous potentially malicious
+binaries using both traditional virtual-machine introspection and
+our new hardware-based instrumentation. Our results show that
+not only is our analysis on-par with existing software-based
+counterparts, but that our physical instrumentation is capable
+of successfully analyzing far more binaries, as it is not foiled by
+popular anti-analysis techniques."
+symp2016,When a Tree Falls:  Using Diversity in Ensemble Classifiers to Identify Evasion in Malware Detectors,"Machine learning classifiers are a vital component
+of modern malware and intrusion detection systems. However,
+past studies have shown that classifier based detection systems are
+susceptible to evasion attacks in practice. Improving the evasion
+resistance of learning based systems is an open problem. To
+address this, we introduce a novel method for identifying the
+observations on which an ensemble classifier performs poorly.
+During detection, when a sufficient number of votes from in-
+dividual classifiers disagree, the ensemble classifier prediction is
+shown to be unreliable. The proposed method, ensemble classifier
+mutual agreement analysis, allows the detection of many forms
+of classifier evasion without additional external ground truth.
+
+We evaluate our approach using PDFrate, a PDF malware
+detector. Applying our method to data taken from a real network,
+we show that the vast majority of predictions can be made with
+high ensemble classifier agreement. However, most classifier eva-
+sion attempts, including nine targeted mimicry scenarios from two
+recent studies, are given an outcome of uncertain indicating that
+these observations cannot be given a reliable prediction by the
+classifier. To show the general applicability of our approach, we
+tested it against the Drebin Android malware detector where an
+uncertain prediction was correctly given to the majority of novel
+attacks. Our evaluation includes over 100,000 PDF documents
+and 100,000 Android applications. Furthermore, we show that our
+approach can be generalized to weaken the effectiveness of the
+Gradient Descent and Kernel Density Estimation attacks against
+Support Vector Machines. We discovered that feature bagging
+is the most important property for enabling ensemble classifier
+diversity based evasion detection."
+symp2016,Kratos:  Discovering Inconsistent Security Policy Enforcement in the Android Framework,"The Android framework utilizes a permission-based
+security model, which is essentially a variation of the ACL-based
+access control mechanism. This security model provides con-
+trolled access to various system resources. Access control systems
+are known to be vulnerable to anomalies in security policies,
+such as inconsistency. In this work, we focus on inconsistent
+security enforcement within the Android framework, motivated
+by the recent work which discovered such vulnerabilities. They
+include stealthily taking pictures in the background and recording
+keystrokes without any permissions, posing security and privacy
+risks to Android users. Identifying such inconsistencies is gener-
+ally difficult, especially in complicated and large codebases such
+as the Android framework.
+
+Our work is the first to propose a methodology to system-
+atically uncover the inconsistency in security policy enforcement
+in Android. We do not assume Android’s security policies are
+known and focus only on inconsistent enforcement. We propose
+Kratos, a tool that leverages static analysis to build a precise call
+graph for identifying paths that allow third-party applications
+with insufficient privilege to access sensitive resources, violating
+security policies. Kratos is designed to analyze any Android sys-
+tem, including vendor-customized versions. Using Kratos, we have
+conservatively discovered at least fourteen inconsistent security
+enforcement cases that can lead to security check circumvention
+vulnerabilities across important and popular services such as
+the SMS service and the Wi-Fi service, incurring impact such
+as privilege escalation, denial of service, and soft reboot. Our
+findings also provide useful insights on how to proactively prevent
+such security enforcement inconsistency within Android."
+symp2016,How to Make ASLR Win the Clone Wars:  Runtime Re-Randomization,"Existing techniques for memory randomization
+such as the widely explored Address Space Layout Randomization
+(ASLR) perform a single, per-process randomization that is
+applied before or at the process’ load-time. The efficacy of such
+upfront randomizations crucially relies on the assumption that
+an attacker has only one chance to guess the randomized address,
+and that this attack succeeds only with a very low probability.
+Recent research results have shown that this assumption is not
+valid in many scenarios, e.g., daemon servers fork child processes
+that inherent the state – and if applicable: the randomization – of
+their parents, and thereby create clones with the same memory
+layout. This enables the so-called clone-probing attacks where an
+adversary repeatedly probes different clones in order to increase
+its knowledge about their shared memory layout.
+
+In this paper, we propose RUNTIMEASLR – the first ap-
+proach that prevents clone-probing attacks without altering
+the intended semantics of child process forking. The paper
+makes the following three contributions. First, we propose a
+semantics-preserving and runtime-based approach for preventing
+clone-probing attacks by re-randomizing the address space of
+every child after fork() at runtime while keeping the parent’s
+state. We achieve this by devising a novel, automated pointer
+tracking policy generation process that has to be run just once,
+followed by a pointer tracking mechanism that is only applied to
+the parent process. Second, we propose a systematic and holistic
+pointer tracking mechanism that correctly identifies pointers inside
+memory space. This mechanism constitutes the central technical
+building block of our approach. Third, we provide an open-
+source implementation of our approach based on Intel’s Pin on
+an x86-64 Linux platform, which supports COTS server binaries
+directly. We have also evaluated our system on Nginx web server.
+The results show that RUNTIMEASLR identifies all pointers,
+effectively prevents clone-probing attacks. Although it takes a
+longer time for RUNTIMEASLR to start the server program
+(e.g., 35 seconds for Nginx), RUNTIMEASLR imposes no run-
+time performance overhead to the worker processes that provide
+actual services."
+symp2016,Leakage-Resilient Layout Randomization for Mobile Devices,"Attack techniques based on code reuse continue to
+enable real-world exploits bypassing all current mitigations. Code
+randomization defenses greatly improve resilience against code
+reuse. Unfortunately, sophisticated modern attacks such as JIT-
+ROP can circumvent randomization by discovering the actual
+code layout on the target and relocating the attack payload on
+the fly. Hence, effective code randomization additionally requires
+that the code layout cannot be leaked to adversaries.
+
+Previous approaches to leakage-resilient diversity have either
+relied on hardware features that are not available in all proces-
+sors, particularly resource-limited processors commonly found
+in mobile devices, or they have had high memory overheads.
+We introduce a code randomization technique that avoids these
+limitations and scales down to mobile and embedded devices:
+Leakage-Resilient Layout Randomization (LR2).
+
+Whereas previous solutions have relied on virtualization, x86
+segmentation, or virtual memory support, LR2 merely requires
+the underlying processor to enforce a W⊕X policy—a feature that
+is virtually ubiquitous in modern processors, including mobile
+and embedded variants. Our evaluation shows that LR2 provides
+the same security as existing virtualization-based solutions while
+avoiding design decisions that would prevent deployment on less
+capable yet equally vulnerable systems. Although we enforce
+execute-only permissions in software, LR2 is as efficient as the
+best-in-class virtualization-based solution.
+
+I. MOTIVATION
+
+The recent “Stagefright” vulnerability exposed an estimated
+950 million Android systems to remote exploitation [21].
+Similarly, the “One Class to Rule them All” [40] zero-day vul-
+nerability affected 55% of all Android devices. These are just
+the most recent incidents in a long series of vulnerabilities that
+enable attackers to mount code-reuse attacks [37, 43] against
+mobile devices. Moreover, because these devices run scripting
+capable web browsers, they are also exposed to sophisticated
+code-reuse attacks that can bypass ASLR and even fine-
+grained code randomization by exploiting information-leakage
+vulnerabilities [11, 20, 48, 50]. Just-in-time attacks (JIT-
+ROP) [50] are particularly challenging because they misuse
+run-time scripting to analyze the target memory layout after
+
+randomization and relocate a return-oriented programming
+(ROP) payload accordingly.
+
+There are several alternatives to code randomization aimed
+to defend against code-reuse attacks, including control-flow
+integrity (CFI) [1] and code-pointer integrity (CPI) [28]. How-
+ever, these defenses come with their own set of challenges
+and tend to have high worst-case performance overheads. We
+focus on code randomization techniques since they are known
+to be efficient [18, 25] and scalable to complex, real-world
+applications such as web browsers, language runtimes, and
+operating system kernels without the need to perform elaborate
+static program analysis during compilation.
+
+Recent code randomization defenses offer varying degrees
+of resilience to JIT-ROP attacks [4, 6, 14, 15, 20, 22, 31, 35].
+However, all of these approaches target x86 systems and
+are, for one reason or another, unfit for use on mobile and
+embedded devices, a segment which is currently dominated by
+ARM processors. This motivates our search for randomization
+frameworks that offer the same security properties as the state-
+of-the-art solutions for x86 systems while removing the lim-
+itations, such as dependence on expensive hardware features,
+that make them unsuitable for mobile and embedded devices.
+
+The capabilities of mobile and embedded processors vary
+widely. For instance, many micro-processors do not have a
+full memory management unit (MMU) with virtual memory
+support. Instead they use a memory protection unit (MPU)
+which saves space and facilitates real-time operation1. Pro-
+cessors without an MMU can therefore not support defenses
+that require virtual memory support [4, 14, 15, 22]. High-end
+ARM processors contain MMUs and therefore offer full virtual
+memory support. However, current ARM processors do not
+support2 execute-only memory (XoM) [2] which is a funda-
+mental requirement for randomization-based defenses offering
+comprehensive resilience to memory disclosure [14, 15].
+
+Therefore, our goal is to design a leakage-resilient layout
+randomization approach, dubbed LR2, that enforces XoM
+purely in software making our technique applicable to MMU-
+less hardware as well. Inspired by software-fault isolation
+techniques (SFI) [45, 47, 53], we enforce XoM by masking
+load addresses to prevent the program from reading from any
+code addresses. However, software-enforced XoM is funda-
+mentally different from SFI: First, XoM protects trusted code
+
+1MPUs can still enforce W⊕X policies for a given address range.
+2Firmware executed from non-volatile storage can be marked as execute-
+
+only. Code executing out of RAM cannot be marked execute-only on current
+processors.
+
+Permission to freely reproduce all or part of this paper for noncommercial
+purposes is granted provided that copies bear this notice and the full citation
+on the first page. Reproduction for commercial purposes is strictly prohibited
+without the prior written consent of the Internet Society, the first-named author
+(for reproduction of an entire paper only), and the author’s employer if the
+paper was prepared within the scope of employment.
+NDSS ’16, 21-24 February 2016, San Diego, CA, USA
+Copyright 2016 Internet Society, ISBN 1-891562-41-X
+http://dx.doi.org/10.14722/ndss.2016.23364"
+symp2016,Enabling Client-Side Crash-Resistance to Overcome Diversification and Information Hiding,"It is a well-known issue that attack primitives
+which exploit memory corruption vulnerabilities can abuse the
+ability of processes to automatically restart upon termination.
+For example, network services like FTP and HTTP servers are
+typically restarted in case a crash happens and this can be used
+to defeat Address Space Layout Randomization (ASLR). Further-
+more, recently several techniques evolved that enable complete
+process memory scanning or code-reuse attacks against diversified
+and unknown binaries based on automated restarts of server
+applications. Until now, it is believed that client applications are
+immune against exploit primitives utilizing crashes. Due to their
+hard crash policy, such applications do not restart after memory
+corruption faults, making it impossible to touch memory more
+than once with wrong permissions.
+
+In this paper, we show that certain client application can
+actually survive crashes and are able to tolerate faults, which
+are normally critical and force program termination. To this
+end, we introduce a crash-resistance primitive and develop a
+novel memory scanning method with memory oracles without
+the need for control-flow hijacking. We show the practicability
+of our methods for 32-bit Internet Explorer 11 on Windows
+8.1, and Mozilla Firefox 64-bit (Windows 8.1 and Linux 3.17.1).
+Furthermore, we demonstrate the advantages an attacker gains
+to overcome recent code-reuse defenses. Latest advances propose
+fine-grained re-randomization of the address space and code
+layout, or hide sensitive information such as code pointers
+to thwart tampering or misuse. We show that these defenses
+need improvements since crash-resistance weakens their security
+assumptions. To this end, we introduce the concept of Crash-
+Resistant Oriented Programming (CROP). We believe that our
+results and the implications of memory oracles will contribute to
+future research on defensive schemes against code-reuse attacks."
+symp2016,Enforcing Kernel Security Invariants with Data Flow Integrity,"The operation system kernel is the foundation of the
+whole system and is often the de facto trusted computing base
+for many higher level security mechanisms. Unfortunately, kernel
+vulnerabilities are not rare and are continuously being introduced
+with new kernel features. Once the kernel is compromised, attack-
+ers can bypass any access control checks, escalate their privileges,
+and hide the evidence of attacks. Many protection mechanisms
+have been proposed and deployed to prevent kernel exploits.
+However, a majority of these techniques only focus on preventing
+control-flow hijacking attacks; techniques that can mitigate non-
+control-data attacks either only apply to drivers/modules or im-
+pose too much overhead. The goal of our research is to develop a
+principled defense mechanism against memory-corruption-based
+privilege escalation attacks. Toward this end, we leverage data-
+flow integrity to enforce security invariants of the kernel access
+control system. In order for our protection mechanism to be
+practical, we develop two new techniques: one for automatically
+inferring data that are critical to the access control system without
+manual annotation, and the other for efficient DFI enforcement
+over the inference results. We have implemented a prototype of
+our technology for the ARM64 Linux kernel on an Android device.
+The evaluation results of our prototype implementation show that
+our technology can mitigate a majority of privilege escalation
+attacks, while imposing a moderate amount of performance
+overhead."
+symp2016,Going Native: Using a Large-Scale Analysis of Android Apps to Create a Practical Native-Code Sandboxing Policy,"Current static analysis techniques for Android ap-
+plications operate at the Java level—that is, they analyze either
+the Java source code or the Dalvik bytecode. However, Android
+allows developers to write code in C or C++ that is cross-compiled
+to multiple binary architectures. Furthermore, the Java-written
+components and the native code components (C or C++) can
+interact.
+
+Native code can access all of the Android APIs that the Java
+code can access, as well as alter the Dalvik Virtual Machine,
+thus rendering static analysis techniques for Java unsound or
+misleading. In addition, malicious apps frequently hide their
+malicious functionality in native code or use native code to launch
+kernel exploits.
+
+It is because of these security concerns that previous research
+has proposed native code sandboxing, as well as mechanisms
+to enforce security policies in the sandbox. However, it is not
+clear whether the large-scale adoption of these mechanisms is
+practical: is it possible to define a meaningful security policy
+that can be imposed by a native code sandbox without breaking
+app functionality?
+
+In this paper, we perform an extensive analysis of the native
+code usage in 1.2 million Android apps. We first used static
+analysis to identify a set of 446k apps potentially using native
+code, and we then analyzed this set using dynamic analysis.
+This analysis demonstrates that sandboxing native code with
+no permissions is not ideal, as apps’ native code components
+perform activities that require Android permissions. However,
+our analysis provided very encouraging insights that make us
+
+believe that sandboxing native code can be feasible and useful in
+practice. In fact, it was possible to automatically generate a native
+code sandboxing policy, which is derived from our analysis, that
+limits many malicious behaviors while still allowing the correct
+execution of the behavior witnessed during dynamic analysis for
+99.77% of the benign apps in our dataset. The usage of our system
+to generate policies would reduce the attack surface available to
+native code and, as a further benefit, it would also enable more
+reliable static analysis of Java code."
+symp2016,Life after App Uninstallation:  Are the Data Still Alive?  Data Residue Attacks on Android,"Uninstalling apps from mobile devices is among
+the most common user practices on smartphones. It may sound
+trivial, but the entire process involves multiple system components
+coordinating to remove the data belonging to the uninstalled
+app. Despite its frequency and complexity, little has been done
+to understand the security risks in the app’s uninstallation
+process. In this project, we have conducted the first systematic
+analysis of Android’s data cleanup mechanism during the app’s
+uninstallation process. Our analysis reveals that data residues
+are pervasive in the system after apps are uninstalled. For each
+identified data residue instance, we have formulated hypotheses
+and designed experiments to see whether it can be exploited to
+compromise the system security. The results are surprising: we
+have found 12 instances of vulnerabilities caused by data residues.
+By exploiting them, adversaries can steal user’s online-account
+credentials, access other app’s private data, escalate privileges,
+eavesdrop on user’s keystrokes, etc. We call these attacks the data
+residue attacks.
+
+To evaluate the real-world impact of the attacks, we have
+conducted an analysis on the top 100 apps in each of the
+27 categories from GooglePlay. The result shows that a large
+portion of the apps can be the target of the data residue attacks.
+We have further evaluated the effectiveness of popular app
+markets (GooglePlay, Amazon appstore and Samsung appstore)
+in preventing our attacking apps from reaching their markets.
+Moreover, we have studied the data residue attacks on 10 devices
+from different vendors to see how vendor customization can affect
+our attacks. Google has acknowledged all our findings, and is
+working with us to get the problems fixed."
+symp2016,FLEXDROID:  Enforcing In-App Privilege Separation in Android,"Mobile applications are increasingly integrating
+third-party libraries to provide various features, such as ad-
+vertising, analytics, social networking, and more. Unfortunately,
+such integration with third-party libraries comes with the cost
+of potential privacy violations of users, because Android always
+grants a full set of permissions to third-party libraries as
+their host applications. Unintended accesses to users’ private
+data are underestimated threats to users’ privacy, as complex
+and often obfuscated third-party libraries make it hard for
+application developers to estimate the correct behaviors of third-
+party libraries. More critically, a wide adoption of native code
+(JNI) and dynamic code executions such as Java reflection or
+dynamic code reloading, makes it even harder to apply state-of-
+the-art security analysis.
+
+In this work, we propose FLEXDROID, a new Android
+security model and isolation mechanism, that provides dy-
+namic, fine-grained access control for third-party libraries. With
+FLEXDROID, application developers not only can gain a full
+control of third-party libraries (e.g., which permissions to grant
+or not), but also can specify how to make them behave after
+detecting a privacy violation (e.g., providing a mock user’s
+information or kill). To achieve such goals, we define a new
+notion of principals for third-party libraries, and develop a novel
+security mechanism, called inter-process stack inspection that is
+effective to JNI as well as dynamic code execution. Our usability
+study shows that developers can easily adopt FLEXDROID’s policy
+to their existing applications. Finally, our evaluation shows that
+FLEXDROID can effectively restrict the permissions of third-party
+libraries with negligible overheads."
+symp2016,IntelliDroid:  A Targeted Input Generator for the Dynamic Analysis of Android Malware,"While dynamic malware analysis methods generally
+provide better precision than purely static methods, they have the
+key drawback that they can only detect malicious behavior if it
+is executed during analysis. This requires inputs that trigger the
+malicious behavior to be applied during execution. All current
+methods, such as hard-coded tests, random fuzzing and concolic
+testing, can provide good coverage but are inefficient because
+they are unaware of the specific capabilities of the dynamic
+analysis tool. In this work, we introduce IntelliDroid, a generic
+Android input generator that can be configured to produce
+inputs specific to a dynamic analysis tool, for the analysis of
+any Android application. Furthermore, IntelliDroid is capable of
+determining the precise order that the inputs must be injected,
+and injects them at what we call the device-framework interface
+such that system fidelity is preserved. This enables it to be paired
+with full-system dynamic analysis tools such as TaintDroid. Our
+experiments demonstrate that IntelliDroid requires an average
+of 72 inputs and only needs to execute an average of 5% of the
+application to detect malicious behavior. When evaluated on 75
+instances of malicious behavior, IntelliDroid successfully identifies
+the behavior, extracts path constraints, and executes the malicious
+code in all but 5 cases. On average, IntelliDroid performs these
+tasks in 138.4 seconds per application."
+symp2016,Harvesting Runtime Values in Android Applications That Feature Anti-Analysis Techniques,"It is generally challenging to tell apart malware
+from benign applications. To make this decision, human analysts
+are frequently interested in runtime values: targets of reflective
+method calls, URLs to which data is sent, target telephone
+numbers of SMS messages, and many more. However, obfuscation
+and string encryption, used by malware as well as goodware, often
+not only render human inspections, but also static analyses inef-
+fective. In addition, malware frequently tricks dynamic analyses
+by detecting the execution environment emulated by the analysis
+tool and then refraining from malicious behavior.
+
+In this work we therefore present HARVESTER, an approach
+to fully automatically extract runtime values from Android
+applications. HARVESTER is designed to extract values even from
+highly obfuscated state-of-the-art malware samples that obfuscate
+method calls using reflection, hide sensitive values in native code,
+load code dynamically and apply anti-analysis techniques. The
+approach combines program slicing with code generation and
+dynamic execution.
+
+Experiments on 16,799 current malware samples show that
+HARVESTER fully automatically extracts many sensitive values,
+with perfect precision. The process usually takes less than three
+minutes and does not require human interaction. In particular,
+it goes without simulating UI inputs. Two case studies further
+show that by integrating the extracted values back into the app,
+HARVESTER can increase the recall of existing static and dynamic
+analysis tools such as FlowDroid and TaintDroid."
+symp2016,Automatic Forgery of Cryptographically Consistent Messages to Identify Security Vulnerabilities in Mobile Services,"Most mobile apps today require access to remote
+services, and many of them also require users to be authenticated
+in order to use their services. To ensure the security between the
+client app and the remote service, app developers often use cryp-
+tographic mechanisms such as encryption (e.g., HTTPS), hashing
+(e.g., MD5, SHA1), and signing (e.g., HMAC) to ensure the confi-
+dentiality and integrity of the network messages. However, these
+cryptographic mechanisms can only protect the communication
+security, and server-side checks are still needed because malicious
+clients owned by attackers can generate any messages they wish.
+As a result, incorrect or missing server side checks can lead to
+severe security vulnerabilities including password brute-forcing,
+leaked password probing, and security access token hijacking. To
+demonstrate such a threat, we present AUTOFORGE, a tool that
+can automatically forge valid request messages from the client side
+to test whether the server side of an app has ensured the security of
+user accounts with sufficient checks. To enable these security tests,
+a fundamental challenge lies in how to forge a valid cryptographi-
+cally consistent message such that it can be consumed by the server.
+We have addressed this challenge with a set of systematic tech-
+niques, and applied them to test the server side implementation of
+76 popular mobile apps (each of which has over 1,000,000 installs).
+Our experimental results show that among these apps, 65 (86%) of
+their servers are vulnerable to password brute-forcing attacks, all
+(100%) are vulnerable to leaked password probing attacks, and 9
+(12%) are vulnerable to Facebook access token hijacking attacks."
+symp2016,Differentially Private Password Frequency Lists,"Given a dataset of user-chosen passwords, the
+frequency list reveals the frequency of each unique password.
+We present a novel mechanism for releasing perturbed password
+frequency lists with rigorous security, efficiency, and distortion
+guarantees. Specifically, our mechanism is based on a novel
+algorithm for sampling that enables an efficient implementation
+of the exponential mechanism for differential privacy (naive
+sampling is exponential time). It provides the security guarantee
+that an adversary will not be able to use this perturbed frequency
+list to learn anything of significance about any individual user’s
+password even if the adversary already possesses a wealth of
+background knowledge about the users in the dataset. We prove
+that our mechanism introduces minimal distortion, thus ensuring
+that the released frequency list is close to the actual list. Further,
+we empirically demonstrate, using the now-canonical password
+dataset leaked from RockYou, that the mechanism works well
+in practice: as the differential privacy parameter � varies from
+8 to 0.002 (smaller � implies higher security), the normalized
+distortion coefficient (representing the distance between the re-
+leased and actual password frequency list divided by the number
+of users N ) varies from 8.8 × 10−7 to 1.9 × 10−3. Given this
+appealing combination of security and distortion guarantees, our
+mechanism enables organizations to publish perturbed password
+frequency lists. This can facilitate new research comparing
+password security between populations and evaluating password
+improvement approaches. To this end, we have collaborated with
+Yahoo! to use our differentially private mechanism to publicly
+release a corpus of 50 password frequency lists representing
+approximately 70 million Yahoo! users. This dataset is now the
+largest password frequency corpus available. Using our perturbed
+dataset we are able to closely replicate the original published
+analysis of this data."
+symp2016,Who Are You?  A Statistical Approach to Measuring User Authenticity,"Passwords are used for user authentication by
+almost every Internet service today, despite a number of well-
+known weaknesses. Numerous attempts to replace passwords
+have failed, in part because changing users’ behavior has proven
+to be difficult. One approach to strengthening password-based
+authentication without changing user experience is to classify
+login attempts into normal and suspicious activity based on a
+number of parameters such as source IP, geo-location, browser
+configuration, and time of day. For the suspicious attempts,
+the service can then require additional verification, e.g., by
+an additional phone-based authentication step. Systems working
+along these principles have been deployed by a number of Internet
+services but have never been studied publicly. In this work, we
+perform the first public evaluation of a classification system for
+user authentication. In particular:
+
+(i) We develop a statistical framework for identifying suspicious
+login attempts.
+
+(ii) We develop a fully functional prototype implementation that
+can be evaluated efficiently on large datasets.
+
+(iii) We validate our system on a sample of real-life login data
+from LinkedIn as well as simulated attacks, and demonstrate
+that a majority of attacks can be prevented by imposing
+additional verification steps on only a small fraction of users.
+
+(iv) We provide a systematic study of possible attackers against
+such a system, including attackers targeting the classifier
+itself."
+symp2016,Pitfalls in Designing Zero-Effort Deauthentication:  Opportunistic Human Observation Attacks,"Deauthentication is an important component of
+any authentication system. The widespread use of computing
+devices in daily life has underscored the need for zero-effort
+deauthentication schemes. However, the quest for eliminating user
+effort may lead to hidden security flaws in the authentication
+schemes.
+
+As a case in point, we investigate a prominent zero-effort
+deauthentication scheme, called ZEBRA, which provides an inter-
+esting and a useful solution to a difficult problem as demonstrated
+in the original paper. We identify a subtle incorrect assumption
+in its adversary model that leads to a fundamental design flaw.
+We exploit this to break the scheme with a class of attacks
+that are much easier for a human to perform in a realistic
+adversary model, compared to the naı̈ve attacks studied in the
+ZEBRA paper. For example, one of our main attacks, where the
+human attacker has to opportunistically mimic only the victim’s
+keyboard typing activity at a nearby terminal, is significantly
+more successful compared to the naı̈ve attack that requires
+mimicking keyboard and mouse activities as well as keyboard-
+mouse movements. Further, by understanding the design flaws in
+ZEBRA as cases of tainted input, we show that we can draw on
+well-understood design principles to improve ZEBRA’s security."
+symp2016,VISIBLE:  Video-Assisted Keystroke Inference from Tablet Backside Motion,"The deep penetration of tablets in daily life has
+made them attractive targets for keystroke inference attacks that
+aim to infer a tablet user’s typed inputs. This paper presents
+VISIBLE, a novel video-assisted keystroke inference framework
+to infer a tablet user’s typed inputs from surreptitious video
+recordings of tablet backside motion. VISIBLE is built upon
+the observation that the keystrokes on different positions of
+the tablet’s soft keyboard cause its backside to exhibit different
+motion patterns. VISIBLE uses complex steerable pyramid de-
+composition to detect and quantify the subtle motion patterns of
+the tablet backside induced by a user’s keystrokes, differentiates
+different motion patterns using a multi-class Support Vector
+Machine, and refines the inference results using a dictionary
+and linguistic relationship. Extensive experiments demonstrate
+the high efficacy of VISIBLE for inferring single keys, words,
+and sentences. In contrast to previous keystroke inference attacks,
+VISIBLE does not require the attacker to visually see the tablet
+user’s input process or install any malware on the tablet."
