@@ -1,4 +1,6 @@
 # Web Application for Frequency Analysis
+![alt text](https://github.com/gled0n/Frequency-Analysis-WebApp/blob/master/graph_scr.PNG)
+
 This work was developed as part of "PIN: Protection in Infrastructures and Networks Seminar" at Telecooperation Lab (TK) - Darmstadt Technical University in Summer term 2020.
 
 Build the container:
