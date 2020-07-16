@@ -1,2 +1,2 @@
-# Frequency-Analysis-WebApp
-Simple Python web application to identify the latest trends in system and network security using frequency analysis
+# Web Application for Frequency Analysis
+This work was developed as part of PIN: Protection in Infrastructures and Networks Seminar at Telecooperation Lab (TK) - Darmstadt Technical University in Summer term 2020.
