@@ -9,7 +9,7 @@ import matplotlib.ticker as ticker
 st.markdown(
 """
 # Recent Trends in Systems and Network Security
-## Gledon Doci - Sommersemester 2020
+## Telecooperation Lab (TK) - TU Darmstadt - Sommersemester 2020
 """
 )
 
@@ -47,14 +47,14 @@ def getvalues(inputstring):
     for conference in conferences:
         for x in range(2010,2020):
             templist = []
-            if(not os.path.isfile("Dataset/" + conference + "-" + str(x) + ".csv")):
+            if(not os.path.isfile("dataset/" + conference + "-" + str(x) + ".csv")):
                 continue
-            size = sum(1 for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")))
+            size = sum(1 for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")))
             if(conference == "ieee"):
                 confname = conference.upper() + " - " + str(x)
                 momcount = 0
                 for a in listofkeywords:
-                    for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")):
+                    for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['keywords'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])
@@ -67,7 +67,7 @@ def getvalues(inputstring):
                 confname = conference.upper() + " - " + str(x)
                 momcount = 0
                 for a in listofkeywords:
-                    for row in csv.DictReader(open("Dataset/" + conference + "-" + str(x) + ".csv")):
+                    for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['abstract'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])

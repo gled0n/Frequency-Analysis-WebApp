@@ -7,12 +7,12 @@ This work was developed as part of "PIN: Protection in Infrastructures and Netwo
 
 Build the container:
 ```docker
-docker build -f Dockerfile -t app:latest .
+docker build -f Dockerfile -t frequency-analysis .
 ```
 
 Run the container:
 ```docker
-docker run -i -t -p 8501:8501 app:latest
+docker run -i -t -p 8501:8501 frequency-analysis
 ```
 
-The container is now available on http://localhost:8501/.
+The application is now available on http://localhost:8501/.
