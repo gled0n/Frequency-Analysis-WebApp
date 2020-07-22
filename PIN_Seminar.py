@@ -31,13 +31,16 @@ def generategraph(yacm,yusenix,yieee,yndss,word):
     plt.title('Use of the given words throughout the years.')
 
     plt.legend()
+    # Plot the frequency graph.
     st.pyplot()
 
 def getvalues(inputstring):
     listofkeywords = []
+    # Separate the keywords
     listofkeywordstemp = inputstring.split(";")
     for m in listofkeywordstemp:
         listofkeywords.append(m)
+    # The table of the results
     df2 = pd.DataFrame(columns=['Conference', 'Title'])
     conferences = ["acm","usenix","ieee","ndss"]
     yacm = []
@@ -49,15 +52,19 @@ def getvalues(inputstring):
             templist = []
             if(not os.path.isfile("dataset/" + conference + "-" + str(x) + ".csv")):
                 continue
+	    # The number of publications per conference
             size = sum(1 for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")))
-            if(conference == "ieee"):
+            # Only IEEE has a keywords field.
+	    if(conference == "ieee"):
                 confname = conference.upper() + " - " + str(x)
+		# Count the publications which include at least one of the keywords
                 momcount = 0
                 for a in listofkeywords:
                     for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['keywords'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])
+		# Calculate the frequency
                 frequency = (momcount/size)*100
                 yieee.append(frequency)
                 for title in templist:
@@ -65,12 +72,14 @@ def getvalues(inputstring):
                     df2.loc[len(df2)] = toinsert
             else:
                 confname = conference.upper() + " - " + str(x)
+		# Count the publications which include at least one of the keywords
                 momcount = 0
                 for a in listofkeywords:
                     for row in csv.DictReader(open("dataset/" + conference + "-" + str(x) + ".csv")):
                         if a.upper() in row['abstract'].upper() and row['title'] not in templist:
                             momcount += 1
                             templist.append(row['title'])
+		# Calculate the frequency
                 frequency = (momcount/size)*100
                 for title in templist:
                     toinsert = [confname, title,]
@@ -81,6 +90,7 @@ def getvalues(inputstring):
                 yusenix.append(frequency)
             if(conference == "ndss"):
                 yndss.append(frequency)
+    # Generate the graph
     generategraph(yacm,yusenix,yieee,yndss,a)
     yacm = []
     yusenix = []
@@ -88,7 +98,7 @@ def getvalues(inputstring):
     yndss= []
     return df2
 
-path = st.text_input('Enter keyword')
-if path:
-	df = getvalues(path)
+keywords = st.text_input('Enter keyword')
+if keywords:
+	df = getvalues(keywords)
 	st.table(df)
